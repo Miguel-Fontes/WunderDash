@@ -1,0 +1,105 @@
+$background-header-bottom: rgb(135, 125, 246);
+$background-body: rgb(218, 218, 218);
+$background-cards: #fff;
+$background-tasks: rgb(208, 208, 208);
+$shadows-color: #808080;
+
+$text-base-size: 16px;
+$font-face: 'Roboto Condensed', sans-serif;
+
+
+@mixin shadows() {
+ box-shadow: -0px 1px 1px 1px $shadows-color;
+}
+
+@mixin shadowsAtivo() {
+  box-shadow: 1px 1px 8px 1px $shadows-color;
+}
+
+@mixin shadowsInterativas() {
+  @include shadows();
+  transition: box-shadow 0.2s ease-in-out;
+  &:hover {
+    @include shadowsAtivo();
+  }
+}
+
+html {
+  min-height: 100%;
+}
+
+body {
+  background-color: $background-body;
+  font-family: $font-face;
+  min-height: 100%;
+}
+
+.container {
+  min-height: 100%;
+  position: relative;
+}
+
+header {
+  min-height: 3em;
+
+  background-color: $background-header-bottom;
+  color: white;
+  & h1 {
+    margin-top: 0;
+    vertical-align: middle;
+  }
+}
+
+main {
+  max-width: 1024px;
+  margin: 0 auto;
+  padding: 10px 10px 10px 10px;
+  min-height: 100%;
+}
+
+article {
+  @include shadowsInterativas();
+  background-color: $background-cards;
+  margin-top: 20px;
+  padding: 10px 50px 10px 10px;
+  & h1{
+    margin-top: 0;
+  }
+  & ul {
+    list-style: none;
+  }
+  & li {
+    background-color: $background-tasks;
+    border-left: 5px solid green;
+    height: 30px;
+    margin-bottom: 3px;
+    padding-left: 10px;
+    & input {
+      margin-right: 10px;
+    }
+    & span {
+      vertical-align: middle;
+    }
+  }
+}
+
+footer {
+  width: 100%;
+  min-height: 8em;
+  bottom: 0;
+  margin-top: 20px;
+  background-color: $background-header-bottom;
+  padding: 10px 10px 10px 10px;
+  color: white;
+  & h2 {
+    margin: 0 0 0 0;
+    text-decoration: underline;
+  }
+  & ul {
+    list-style: none;
+  }
+  & a {
+    text-decoration: none;
+    color: inherit;
+  }
+}
