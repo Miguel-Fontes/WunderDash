@@ -1,11 +1,11 @@
 'use strict';
 
 // Declare app level module which depends on views, and components
-angular.module('myApp', [
+angular.module('app', [
   'ngRoute',
-  'myApp.login',
-  'myApp.tasks',
-  'myApp.version'
+  'app.login',
+  'app.tasks',
+  'app.version'
 ]).
 config(['$routeProvider', function($routeProvider) {
   $routeProvider.otherwise({redirectTo: '/login'});

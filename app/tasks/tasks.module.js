@@ -1,15 +1,11 @@
 'use strict';
 
-angular.module('myApp.tasks', ['ngRoute'])
+angular.module('app.tasks', ['ngRoute'])
 
 .config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/tasks', {
     templateUrl: 'tasks/tasks.html',
-    controller: 'TasksCtrl'
+    controller: 'TasksController',
+    controllerAs: 'TasksCtrl'
   });
-}])
-
-.controller('TasksCtrl', [function() {
-  console.log(">>TasksCtrl");
-
 }]);

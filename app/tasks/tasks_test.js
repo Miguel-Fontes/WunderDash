@@ -1,8 +1,8 @@
 'use strict';
 
-describe('myApp.tasks module', function() {
+describe('app.tasks module', function() {
 
-  beforeEach(module('myApp.tasks'));
+  beforeEach(module('app.tasks'));
 
   describe('tasks controller', function(){
 

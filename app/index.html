@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html lang="en" ng-app="myApp" class="no-js"> <!--<![endif]-->
+<!--[if lt IE 7]>      <html lang="en" ng-app="app" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html lang="en" ng-app="app" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html lang="en" ng-app="app" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en" ng-app="app" class="no-js"> <!--<![endif]-->
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -44,9 +44,6 @@
     </footer>
   </div>
 
-
-
-
 </body>
 
 <!-- In production use:
@@ -62,14 +59,22 @@
 <!-- app -->
 <script src="app.js"></script>
 
-<!-- Models  -->
+<!-- Modules -->
+<script src="login/login.module.js"></script>
+<script src="tasks/tasks.module.js"></script>
+
+<!-- Services -->
+<script src="tasks/tasks.service.js"></script>
+<script src="tasks/lists.service.js"></script>
 
 <!-- Controllers -->
+<script src="tasks/tasks.controller.js"></script>
+
+
+<!-- Models  -->
+
 
 <!-- Views -->
-<script src="login/login.js"></script>
-<script src="tasks/tasks.js"></script>
-
 
 
 </html>
