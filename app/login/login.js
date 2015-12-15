@@ -12,15 +12,25 @@ angular.module('myApp.login', ['ngRoute'])
   });
 }])
 
-.controller('LoginCtrl', ["$scope", function($scope) {
+.controller('LoginCtrl', ["$scope", "$location", function($scope, $location) {
+  console.log(">>LoginCtrl"); // Remover
   $scope.user = {};
-  var user ={};
+  var credentials = {};
 
-  $scope.login = function (user) {
-      user = user;
-      $scope.user = {};
-      console.log(user);
-      redirectTo: "/tasks";
+  $scope.login = function(user) {
+    console.log(">>LoginCtrl.login");
+    credentials = user;
+    $scope.user = {};
+    // Chamar função de login
+    // Se login bem sucedido, proceder com redirect abaixo
+    $location.path('/tasks');
+    // Caso login mal sucedido, apresentar erro
+  };
+
+  $scope.reset  = function(form) {
+    console.log(">>LoginCtrl.reset");
+    form.$setPristine();
+    form.$setUntouched();
   };
 
 }]);

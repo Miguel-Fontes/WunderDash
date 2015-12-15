@@ -10,5 +10,6 @@ angular.module('myApp.tasks', ['ngRoute'])
 }])
 
 .controller('TasksCtrl', [function() {
+  console.log(">>TasksCtrl");
 
 }]);
