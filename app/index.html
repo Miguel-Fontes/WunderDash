@@ -6,7 +6,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>My AngularJS App</title>
+  <title>WunderDash</title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/normalize.css">
@@ -16,75 +16,60 @@
   <link href="https://fonts.googleapis.com/css?family=Comfortaa:700,400|Roboto+Condensed:400,300" rel="stylesheet" type="text/css">
 </head>
 <body>
-<div class="container">
-  <header>
-    <h1>WunderDash</h1>
-  </header>
+  <div class="container">
+    <header>
+      <h1>WunderDash</h1>
+      <!-- Adicionar Menu de Navegação básico aqui -->
+        <ul style class="list-unstyled">
+          <li><a ng-href="#/tasks">Tasks</a></li>
+          <li><a ng-href="#/">Logout</a></li>
+        </ul>
+    </header>
 
-  <main>
+    <main>
 
-    <section>
+      <!-- ng-view here -->
+      <div ng-view></div>
 
-    <article>
-      <h1>Título da Lista 1</h1>
-      <ul class="tarefas">
-        <li><span><input type="checkbox" value="Tarefa 1" />Tarefa 1</span></li>
-        <li><span><input type="checkbox" value="Tarefa 2" />Tarefa 2</span></li>
-        <li><span><input type="checkbox" value="Tarefa 3" />Tarefa 3</span></li>
+    </main>
+
+    <footer>
+      <h2>Links</h2>
+      <ul class="tarefas list-unstyled">
+        <li><a href="#">Link 1</a></li>
+        <li><a href="#">Link 2</a></li>
+        <li><a href="#">Link 3</a></li>
+        <li><a href="#">Link 4</a></li>
       </ul>
-    </article>
+    </footer>
+  </div>
 
-    <article>
-      <h1>Título da Lista 2</h1>
-      <ul class="tarefas">
-        <li><span><input type="checkbox" value="Tarefa 1" />Tarefa 1</span></li>
-        <li><span><input type="checkbox" value="Tarefa 2" />Tarefa 2</span></li>
-        <li><span><input type="checkbox" value="Tarefa 3" />Tarefa 3</span></li>
-      </ul>
-    </article>
 
-    <article>
-      <h1>Título da Lista 3</h1>
-      <ul class="tarefas">
-        <li><span><input type="checkbox" value="Tarefa 1" />Tarefa 1</span></li>
-        <li><span><input type="checkbox" value="Tarefa 2" />Tarefa 2</span></li>
-        <li><span><input type="checkbox" value="Tarefa 3" />Tarefa 3</span></li>
-      </ul>
-    </article>
 
-    <article>
-      <h1>Título da Lista 4</h1>
-      <ul class="tarefas">
-        <li><span><input type="checkbox" value="Tarefa 1" />Tarefa 1</span></li>
-        <li><span><input type="checkbox" value="Tarefa 2" />Tarefa 2</span></li>
-        <li><span><input type="checkbox" value="Tarefa 3" />Tarefa 3</span></li>
-      </ul>
-    </article>
 
-  </section>
+</body>
 
-  </main>
-
-  <footer>
-    <h2>Links</h2>
-    <ul>
-      <li><a href="#">Link 1</a></li>
-      <li><a href="#">Link 2</a></li>
-      <li><a href="#">Link 3</a></li>
-      <li><a href="#">Link 4</a></li>
-    </ul>
-  </footer>
-</div>
-  <!-- In production use:
-  <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
+<!-- In production use:
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
 -->
+<!-- Vendor -->
 <script src="bower_components/angular/angular.js"></script>
 <script src="bower_components/angular-route/angular-route.js"></script>
-<script src="app.js"></script>
-<script src="view1/view1.js"></script>
-<script src="view2/view2.js"></script>
 <script src="components/version/version.js"></script>
 <script src="components/version/version-directive.js"></script>
 <script src="components/version/interpolate-filter.js"></script>
-</body>
+
+<!-- app -->
+<script src="app.js"></script>
+
+<!-- Models  -->
+
+<!-- Controllers -->
+
+<!-- Views -->
+<script src="login/login.js"></script>
+<script src="tasks/tasks.js"></script>
+
+
+
 </html>

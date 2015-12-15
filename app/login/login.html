@@ -1,0 +1,19 @@
+<!-- TODO: Verificar as alterações a serem efetuadas para interceptar o submit e adicionar o NOVALIDATE -->
+<section>
+  <form name="login" novalidate="true" class="login-form vertical-center" ng-submit="login(user)">
+    <ul class="list-unstyled">
+      <li>
+        <label><h1>Login</h1></label>
+      </li>
+      <li>
+        <input type="email" name="email" value="" ng-model="user.email" placeholder="foo@bar.com">
+      </li>
+      <li>
+        <input type="password" name="senha" value="" ng-model="user.pwd" placeholder="mahsecreatpwd1!1one">
+      </li>
+      <li>
+        <input type="button" name="submit" ng-click="login(user)" value="Login!">
+      </li>
+    </ul>
+  </form>
+</section>
