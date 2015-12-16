@@ -13,20 +13,24 @@ config(['$routeProvider', '$locationProvider', function($routeProvider, $locatio
   $routeProvider
   //http://localhost:8000/app/tasks/?state=0.9739701520&code=198804bc9fb2d9e0b35f
   //http://localhost:8000/app/?state=0.6812455333&code=13b520a4420a457488bf
-  .when('/state=:state', {
-    templateUrl: 'tasks/tasks.html',
-    controller: 'TasksController',
-    controllerAs: 'TasksCtrl'
-  })
-  .when('/login', {
+  .when('/login/', {
     templateUrl: 'login/login.html',
     controller: 'LoginController',
     controllerAs: 'LoginCtrl'
   })
-  .when('/tasks', {
+  .when('/tasks/', {
     templateUrl: 'tasks/tasks.html',
     controller: 'TasksController',
     controllerAs: 'TasksCtrl'
+  })
+  .when('/login/:auth?', {
+    templateUrl: 'tasks/tasks.html',
+    controller: 'TasksController',
+    resolve: {
+      authorization: function(WunderlistService) {
+        return WunderlistService.getAuthorization()
+      }
+    }
   })
   .otherwise({redirectTo: '/login'});
 }]);
