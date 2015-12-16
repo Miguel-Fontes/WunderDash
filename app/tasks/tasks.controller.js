@@ -1,6 +1,6 @@
 angular.module("app.tasks")
 .controller('TasksController', ["$scope", "Lists", "Tasks", function TasksController($scope, Lists, Tasks) {
-  console.log(">>TasksCtrl");
+  console.log(">>TasksController");
   // Retrieve all user's lists
   $scope.lists = Lists.all();
 

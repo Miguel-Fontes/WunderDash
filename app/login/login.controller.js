@@ -1,5 +1,5 @@
 angular.module('app.login')
-.controller('LoginController', ["$scope", "$location", "WunderlistService", function($scope, $location, WunderlistService) {
+.controller('LoginController', ["$scope", "$location", "wunderlist", function($scope, $location, wunderlist) {
   console.log(">>LoginCtrl"); // Remover
   $scope.user = {};
   var credentials = {};
@@ -9,7 +9,7 @@ angular.module('app.login')
     credentials = user;
     $scope.user = {};
 
-    WunderlistService.auth(user);
+    wunderlist.auth(user);
   };
 
   $scope.reset  = function(form) {

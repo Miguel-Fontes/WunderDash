@@ -1,5 +1,7 @@
 angular.module("app.tasks")
-.factory("Lists", function ListsFactory() {
+.factory("Lists", ['wunderlist', function ListsFactory(wunderlist) {
+  console.log(">>ListsService - Yay, Lists. Yo code: " + wunderlist.getAuthorization());
+
   return {
     all: function () {
       return [
@@ -11,4 +13,4 @@ angular.module("app.tasks")
     //update:
     //delete:
   };
-});
+}]);
