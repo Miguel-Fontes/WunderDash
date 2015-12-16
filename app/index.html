@@ -7,6 +7,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>WunderDash</title>
+  <base href="/app/">
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/normalize.css">
@@ -21,8 +22,8 @@
       <h1>WunderDash</h1>
       <!-- Adicionar Menu de Navegação básico aqui -->
         <ul style class="list-unstyled">
-          <li><a ng-href="#/tasks">Tasks</a></li>
-          <li><a ng-href="#/">Logout</a></li>
+          <li><a href="tasks">Tasks</a></li>
+          <li><a href="login">Logout</a></li>
         </ul>
     </header>
 
@@ -66,9 +67,11 @@
 <!-- Services -->
 <script src="tasks/tasks.service.js"></script>
 <script src="tasks/lists.service.js"></script>
+<script src="login/wunderlist.service.js"></script>
 
 <!-- Controllers -->
 <script src="tasks/tasks.controller.js"></script>
+<script src="login/login.controller.js"></script>
 
 
 <!-- Models  -->
