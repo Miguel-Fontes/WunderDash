@@ -1,4 +1,4 @@
-angular.module('app.login')
+angular.module('app.wunderlistAPI')
 .controller('WunderlistController', [ "$window", "wunderlist", function($window, wunderlist) {
 
   console.log(">>WunderlistCtrl");
@@ -10,6 +10,8 @@ angular.module('app.login')
   state = response.substr(response.indexOf("state=") + 6);
 
   wunderlist.setAuthorization(code, state);
+
+  
 
   $window.location.href = "#/tasks"
 }]);

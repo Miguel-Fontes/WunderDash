@@ -1,7 +1,6 @@
 angular.module("app.tasks")
-.factory("Lists", ['wunderlist', function ListsFactory(wunderlist) {
-  console.log(">>ListsService - Yay, Lists. Yo code: " + wunderlist.getAuthorization());
-
+.factory("Lists", [function ListsFactory() {
+  
   return {
     all: function () {
       return [

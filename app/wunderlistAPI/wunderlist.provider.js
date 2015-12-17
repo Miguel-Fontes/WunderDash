@@ -1,14 +1,10 @@
-angular.module('app.login')
+angular.module('app.wunderlistAPI')
 .provider('wunderlist', function wunderlistProvider() {
 
   var wunderAuthUrl = "",
   clientId = "", // Provided by Wunderlist app register
   clientSecret = "", // Provided by Wunderlist app register
   appUrl = ""; // This app URL for redirection
-
-  //client_id="6a91fed3c9ebc490cf99",
-  //appUrl="http://localhost:8000/app/#",
-  //client_secret="d5d2bde725de154765344a9ba872e48a5a8069a915120327c46b452355d2";
 
   this.setClientId = function(id) {
     clientId = id;
@@ -25,10 +21,10 @@ angular.module('app.login')
     console.log(">>wunderlist.setClientSecret: " + clientSecret + " - " + secret);
   }
   //return {
-  this.$get = ["$window", function WunderlistAPIFactory($window) {
+  this.$get = ["$window", "$http", function WunderlistAPIFactory($window, $http) {
     console.log("Instanciando! - " + clientId + " - " + appUrl + " - " + clientSecret );
 
-    return new wunderlistAPI($window, clientId, appUrl, clientSecret);
+    return new wunderlistAPI($window, $http, clientId, appUrl, clientSecret);
 
   }];
 });
