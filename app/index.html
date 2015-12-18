@@ -12,14 +12,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/normalize.css">
   <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/main.css">
-  <link rel="stylesheet" href="app.css">
+  <link rel="stylesheet" href="./assets/css/app.css">
   <script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
   <link href="https://fonts.googleapis.com/css?family=Comfortaa:700,400|Roboto+Condensed:400,300" rel="stylesheet" type="text/css">
 </head>
 <body>
   <div class="container">
     <header>
-      <a href="./"><h1>WunderDash</h1></a>
+      <a href="./"><h1>WunderDash <span app-version></span></h1></a>
       <!-- Adicionar Menu de Navegação básico aqui -->
         <ul style class="list-unstyled">
           <li><a href="#/tasks">Tasks</a></li>
@@ -56,25 +56,25 @@
 <script src="components/version/version.js"></script>
 <script src="components/version/version-directive.js"></script>
 <script src="components/version/interpolate-filter.js"></script>
+<script src="../vendor/wunderlist.sdk.js"></script>
 
 <!-- app -->
-<script src="app.js"></script>
+<script src="app.module.js"></script>
+<script src="app.config.js"></script>
+<script src="app.routes.js"></script>
 
 <!-- Modules -->
-<script src="login/login.module.js"></script>
-<script src="tasks/tasks.module.js"></script>
-<script src="wunderlistAPI/wunderlistAPI.module.js"></script>
 
 <!-- Services -->
-<script src="tasks/tasks.service.js"></script>
-<script src="tasks/lists.service.js"></script>
-<script src="wunderlistAPI/wunderlist.provider.js"></script>
-<script src="wunderlistAPI/wunderlistAPI.js"></script>
+<script src="services/tasks.service.js"></script>
+<script src="services/lists.service.js"></script>
+<script src="services/restapi.service.js"></script>
+<script src="services/datasource.provider.js"></script>
+<script src="services/wunderlist.service.js"></script>
 
 <!-- Controllers -->
 <script src="tasks/tasks.controller.js"></script>
 <script src="login/login.controller.js"></script>
-<script src="wunderlistAPI/wunderlist.controller.js"></script>
 
 
 <!-- Models  -->

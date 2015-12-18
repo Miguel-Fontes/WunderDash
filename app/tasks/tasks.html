@@ -1,8 +1,9 @@
+<!--htmlhint doctype-first: false-->
 <section>
-  <article ng-repeat="list in lists">
+  <article ng-repeat="list in TasksCtrl.lists">
     <h1>{{list.title}}</h1>
     <ul class="tarefas list-unstyled">
-      <li ng-repeat="task in tasks | filter: {list_id: list.id}">
+      <li ng-repeat="task in TasksCtrl.tasks | filter: {list_id: list.id}">
         <span>
           <input type="checkbox" value="{{task.id}}"/>
           {{task.title}}
