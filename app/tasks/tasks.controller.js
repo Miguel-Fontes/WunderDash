@@ -3,9 +3,9 @@
   angular.module('app')
   .controller('Tasks', Tasks);
 
-  Tasks.$inject = ['datasource'];
+  Tasks.$inject = ['datasource', '$scope'];
 
-  function Tasks(datasource) {
+  function Tasks(datasource, $scope) {
     console.log(">>TasksController");
     // Declarations
     var vm = this;
@@ -15,14 +15,22 @@
     activate();
 
     function activate() {
-      // Retrieve all user's lists
-      vm.lists = datasource.lists.all();
-      // Retrieves all user's tasks
-      vm.tasks = datasource.tasks.all();
+      // Retrieve all user's lists and tasks
+      datasource.lists.all().then(function(data) {
+        vm.lists = data;
+        console.log(vm.lists);
+        getTasks();});
+      }
 
-      //console.log(datasource.provider0);
-      //console.log(datasource.provider1);
-    }
+      function getTasks() {
+        for (var i = 0, l = vm.lists.length; i < l; i++ ) {
+          datasource.tasks.forList(vm.lists[i].id).then(function (data) {
+            vm.tasks = vm.tasks.concat(data);
+            /* jshint validthis:true */
+            console.log(vm.tasks);
+            $scope.$apply(); });
+          }
+        }
 
-  }
-})();
+      }
+    })();

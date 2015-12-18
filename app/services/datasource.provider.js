@@ -25,14 +25,16 @@
     // passados para os objetos clientes. É importante que seja validada a
     // entrada efetuada pelo usuário no setDataSource
     datasourceFactory.$inject = ["listsService", "tasksService", 'wunderlist'];
-    function datasourceFactory(listsService, tasksService) {
+    function datasourceFactory(listsService, tasksService, wunderlist) {
 
       return new DatasourceAPI();
 
       function DatasourceAPI() {
         return  {
-          lists: listsService,
-          tasks: tasksService,
+          //lists: listsService,
+          //tasks: tasksService,
+          lists: wunderlist.lists,
+          tasks: wunderlist.tasks
         };
       }
 

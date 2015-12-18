@@ -4224,11 +4224,14 @@ var WebSocketClass = WBEventEmitter.extend({
     _super.initialize.apply(self, arguments);
 
     // TODO: remove this ugly piece of shit, we don't need more binds
-    var fns = ['onSocketClose', 'onSocketError', 'onSocketMessage', 'onSocketOpen'];
-    bindAll(self, fns);
+    //var fns = ['onSocketClose', 'onSocketError', 'onSocketMessage', 'onSocketOpen'];
+    //bindAll(self, fns);
 
     self.validateToken();
-    self.connect();
+    // Removido o Socket Connection para evitar problemas.
+    // A necessidade aqui é apenas baixar as tarefas
+    // TODO: Identificar se ainda é usado socket connection e, se necessário, corrigir.
+    //self.connect();
     self.bindToAppState();
   },
 

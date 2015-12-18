@@ -6,30 +6,45 @@
 
   function wunderlistService() {
 
-    var WunderlistSDK = window.wunderlist.sdk;
-    var WunderlistAPI = new WunderlistSDK({
-      'accessToken': ' 7b01db3d5f6b0c1e9eef36179f0895ae1e05972c181b5d857a67b137e10a',
-      'clientID': '6a91fed3c9ebc490cf99'
-    });
+    var WunderlistSDK, WunderlistAPI;
 
-    WunderlistAPI.initialized.done(function () {
-      WunderlistAPI.http.lists.all()
-      .done(handleListData)
-      .fail(handleError);
+    activate();
 
-      WunderlistAPI.http.tasks.forList(208039612)
-      .done(handleListData)
-      .fail(handleError);
-    });
+    return {
+      lists: WunderlistAPI.http.lists,
+      tasks: WunderlistAPI.http.tasks
+    };
 
-    function handleListData(data) {
-      console.log(data);
-    }
+    function activate() {
 
-    function handleError(error) {
-      console.log(error);
+      WunderlistSDK = window.wunderlist.sdk;
+      WunderlistAPI = new WunderlistSDK({
+        'accessToken': ' ',
+        'clientID': '6a91fed3c9ebc490cf99'
+      });
+
+      WunderlistAPI.initialized.done(handleSuccess).fail(handleFailure);
+
+      function handleSuccess() {
+        // Handle dat Success, bro!
+      }
+
+      function handleFailure() {
+        // Never give up!
+      }
+
     }
 
   }
 
 })();
+
+/*WunderlistAPI.initialized.done(function () {
+WunderlistAPI.http.lists.all()
+.done(handleListData)
+.fail(handleError);
+
+WunderlistAPI.http.tasks.forList(208039612)
+.done(handleListData)
+.fail(handleError);
+}*/

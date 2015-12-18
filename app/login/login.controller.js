@@ -13,6 +13,7 @@
 
     $scope.user = {email: '', pwd:''};
 
+    // API
     vm.login = login;
     vm.reset = reset;
 
